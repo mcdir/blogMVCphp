@@ -45,7 +45,6 @@ $(function () {
             data: $(this).data('pager'),
             dataType: "json"
         }).done(function (data) {
-            console.log(data.next, typeof (data.next), data.id_post);
             $("#blog-more").data('pager', 'p='+data.id_post+'&n='+data.next);
             $("#blog-post-template").tmpl(data).appendTo("#blog-post-next");
             alleditable();
