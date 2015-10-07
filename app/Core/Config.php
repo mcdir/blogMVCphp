@@ -14,10 +14,7 @@ class Config
     }
 
     /**
-     * @param $user
-     * @param $pass
-     * @param $dbname
-     * @return \PDO instance
+     * @return $config instance
      */
     public static function getInstance()
     {

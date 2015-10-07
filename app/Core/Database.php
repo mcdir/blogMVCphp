@@ -4,6 +4,7 @@ namespace Core;
 
 /**
  * class Database
+ * @todo extends \PDO
  */
 class Database
 {
@@ -20,9 +21,10 @@ class Database
     {
         if (null === static::$dbh) {
             $config = Config::getInstance();
-            static::$dbh = new \PDO("mysql:host=localhost;dbname={$config['dbname']}", $config['dbuser'], $config['dbpass']);
+            static::$dbh = new \PDO("mysql:host=localhost;dbname={$config['dbname']}", $config['dbuser'],
+                $config['dbpass']);
             static::$dbh->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-            // @todo add timezone and other setings
+            // @todo add timezone and other settings
         }
 
         return static::$dbh;

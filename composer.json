@@ -2,7 +2,7 @@
   "name": "MVCblog/MVCblog",
   "description": "Jast simple MVC blog",
   "minimum-stability": "stable",
-  "license": "proprietary",
+  "license": "Apache License",
   "authors": [
     {
       "name": "Duka Dmitry",
@@ -44,12 +44,11 @@
   ],
   "autoload": {
     "psr-4": {
-      "Core\\": "app"
+      "Core\\": "app",
+      "Model\\": "app",
+      "Controller\\": "app"
     },
     "classmap": [
-      "app/controllers",
-      "app/models",
-      "app/views"
     ]
   }
 }

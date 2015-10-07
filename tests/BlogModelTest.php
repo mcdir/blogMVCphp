@@ -37,6 +37,7 @@ class BlogModelTest extends PHPUnit_Framework_TestCase
         $this->assertCount(1, (array)$this->blog_model->getPostById(1));
     }
 
+    // @todo and so on
 //    public function testUpdatePostById()
 //    {
 //        $this->assertCount(1, (array) $this->blog_model->updatePostById(1));
@@ -49,4 +50,8 @@ class BlogModelTest extends PHPUnit_Framework_TestCase
 //    {
 //        $this->assertCount(1, (array) $this->blog_model->insertNewPost(1));
 //    }
+
+    protected function tearDown()
+    {
+    }
 }

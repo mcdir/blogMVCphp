@@ -8,8 +8,8 @@ namespace Core;
 class Routes
 {
     private static $instance;
-    public $method = false;
-    private $routes = array();
+
+    public $method = 'index';
 
     private function __construct()
     {
@@ -25,24 +25,14 @@ class Routes
     }
 
     /**
-     * @param $uri
-     * @param $params
-     */
-    public function addRoute($uri, $params)
-    {
-        $this->routes[$uri] = $params;
-    }
-
-    /**
      * @return mixed
      */
     public function autoDispatch()
     {
-        $base_method = 'index';
         if (isset($_GET['url'])) {
             $url = explode('/', $_GET['url']);
             $url = array_chunk(
-                (count($url) < 2 ? $url[1] = $base_method : $url),
+                (count($url) < 2 ? $url[1] = $this->method : $url),
                 2, true
             );
             list($class, $method) = $url[0];
@@ -50,7 +40,7 @@ class Routes
             $class = 'Controller\\' . $class;
         } else {
             $class = 'Controller\\Home';
-            $method = $base_method;
+            $method = $this->method;
         }
         if ($class
             // @todo validate in future
@@ -58,8 +48,10 @@ class Routes
             && class_exists($class)
         ) {
             unset($_GET['url']);
-            $method = method_exists($class, $method) ? $method : $base_method;
-            static::$instance->method = $method;
+            static::$instance->method = method_exists($class, $method)
+                ? $method
+                : $this->method;
+
             return new $class();
         } else {
             // @todo send 404

@@ -16,6 +16,7 @@ abstract class Controller
     {
         $this->view = new View();
     }
+
     /**
      * @inheritdoc Twig render
      */

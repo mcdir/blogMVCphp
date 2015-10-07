@@ -3,7 +3,7 @@
 namespace Core;
 
 /**
- * The application class.
+ * The main application class.
  */
 class App
 {

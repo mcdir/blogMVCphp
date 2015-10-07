@@ -15,7 +15,7 @@ class View
     {
         $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../template/');
         $this->tpl = new \Twig_Environment($loader, array(
-            'cache' => __DIR__ . '/../cache/',
+            'cache' => __DIR__ . '/../../cache/',
             'auto_reload' => true
         ));
         $config = Config::getInstance();

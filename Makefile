@@ -5,13 +5,13 @@
 COMPOSER      = /bin/composer.phar
 BUILDDIR      = vendor
 
-.PHONY: help clean install
+.PHONY: help clean test install
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
-	@echo "  install    to make standalone HTML files"
+	@echo "  install    to make app with database"
 	@echo "  test       to make tests"
-	@echo "  clean      to make HTML files named index.html in directories"
+	@echo "  clean      to make clean app"
 
 clean:
 	rm -rf $(BUILDDIR)/*
@@ -24,8 +24,7 @@ test:
 install:
 	$(COMPOSER) install --prefer-dist
 	$(COMPOSER) dump-autoload -o
-	$mkdir cache
-	$chmod 777 cache
+	@mkdir -p -m 777 cache
 	@echo
 	@mysql -h localhost -u root -p < schema.sql
 	@echo "Build finished."
