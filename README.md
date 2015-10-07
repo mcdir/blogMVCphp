@@ -54,14 +54,14 @@ Not for SEO now ;(
 TODO
 ====
 
-Core/View.php:         @todo to json
-Core/Database.php:     @todo extends \PDO
-Core/Database.php:     @todo add timezone and other settings
-Core/Routes.php:       @todo validate in future
-Core/Routes.php:       @todo send 404
-Controller/Home.php:   @todo rewrite to json
-Controller/Home.php:   @todo send 404 or another error
-Controller/Home.php:   @todo move to helpers
-Controller/Home.php:   @todo validate form in js
-Controller/Home.php:   @todo move to helpers
-Controller/Home.php:   @todo send 404 or another error
+- Core/View.php:         @todo to json
+- Core/Database.php:     @todo extends \PDO
+- Core/Database.php:     @todo add timezone and other settings
+- Core/Routes.php:       @todo validate in future
+- Core/Routes.php:       @todo send 404
+- Controller/Home.php:   @todo rewrite to json
+- Controller/Home.php:   @todo send 404 or another error
+- Controller/Home.php:   @todo move to helpers
+- Controller/Home.php:   @todo validate form in js
+- Controller/Home.php:   @todo move to helpers
+- Controller/Home.php:   @todo send 404 or another error
