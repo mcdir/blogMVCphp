@@ -16,6 +16,7 @@ $(function () {
             submit: 'OK'
         });
     }
+    alleditable();
 
     // modal
     $("#add-new").click(function () {
